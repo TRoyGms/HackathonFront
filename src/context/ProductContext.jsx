@@ -15,7 +15,7 @@ export const ProductProvider = ({ children }) => {
 
     const editProduct = async (updatedProduct) => {
         try {
-            const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/Productos/${updatedProduct.Folio_producto}`, {
+            const response = await fetch(`https://localhost:8080/api/productos/${updatedProduct.Folio_producto}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export const ProductProvider = ({ children }) => {
 
     const deleteProduct = async (productId) => {
         try {
-            const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/Productos/${productId}`, {
+            const response = await fetch(`https://localhost:8080/api/productos/${productId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

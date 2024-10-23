@@ -22,7 +22,7 @@ function ProductListAdmin() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://athleticstoreapi.integrador.xyz/api/Productos');
+        const response = await fetch('https://localhost:8080/api/productos/');
         if (!response.ok) {
           throw new Error('Error al recuperar los productos');
         }

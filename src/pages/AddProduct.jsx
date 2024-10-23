@@ -25,7 +25,7 @@ export default function AddProduct() {
 
     try {
       console.log('Sending token:', authToken);
-      const response = await fetch('https://athleticstoreapi.integrador.xyz/api/Productos', {
+      const response = await fetch('https://localhost:8080/api/productos/', {
         method: 'POST',
         headers: {
           'Authorization':  localStorage.getItem('authToken'),

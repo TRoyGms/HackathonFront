@@ -32,7 +32,7 @@ function Home() {
 
     return (
         <div className="min-h-screen w-full overflow-hidden bg-gradient-to-r from-neutral-700 via-black to-stone-700 bg-[length:400%_400%] animate-gradient-x">
-                  <Helmet>
+                <Helmet>
                     <title>INICIO</title>
                 </Helmet>
             <Header
@@ -68,6 +68,7 @@ function Home() {
                     onFutClick={() => navigate('/Futbol')}
                     onCasualClick={() => navigate('/Casual')}
                 />
+                
             </div>
         </div>
     );

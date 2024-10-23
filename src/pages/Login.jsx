@@ -11,7 +11,7 @@ export default function Login() {
 
   const handleLogin = async (credentials) => {
     try {
-      const response = await fetch('https://athleticstoreapi.integrador.xyz/api/Clientes/login', {
+      const response = await fetch('https://localhost:8080/api/clientes/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

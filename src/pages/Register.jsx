@@ -10,7 +10,7 @@ export default function Register() {
   const handleRegister = async (formData) => {
     const dataWithRole = { ...formData, Id_Rol: 2 }; // Asigna el rol de cliente (Id_Rol = 2)
     try {
-      const response = await fetch('https://athleticstoreapi.integrador.xyz/api/Clientes/register', {
+      const response = await fetch('https://localhost:8080/api/clientes/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
