@@ -16,7 +16,7 @@ function ProductCatalog() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://athleticstoreapi.integrador.xyz/api/Productos');
+        const response = await fetch('https://localhost:8080/api/Productos');
         if (!response.ok) {
           throw new Error('Error al recuperar los productos');
         }
@@ -35,7 +35,7 @@ function ProductCatalog() {
     if (searchTerm) {
       const fetchSearchResults = async () => {
         try {
-          const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/Productos/buscar/${searchTerm}`);
+          const response = await fetch(`https://localhost:8080/api/Productos/buscar/${searchTerm}`);
           if (!response.ok) {
             throw new Error('Error al buscar productos');
           }
@@ -79,7 +79,7 @@ function ProductCatalog() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredProducts && filteredProducts.map(product => (
                 <div key={product.Folio_producto} onClick={() => navigate(`/product/${product.Folio_producto}`)} className="cursor-pointer grid justify-center p-4 border rounded-lg text-center bg-white hover:bg-gray-300 w-60 transform transition-transform duration-300 hover:scale-110">
-                    <img src={`https://athleticstoreapi.integrador.xyz/${product.Imagen}`} alt={product.Nombre_modelo} className="rounded-3xl h-auto mx-auto mb-2" />
+                    <img src={`https://localhost:8080/${product.Imagen}`} alt={product.Nombre_modelo} className="rounded-3xl h-auto mx-auto mb-2" />
                     <h3 className="text-xl font-bold">{product.Nombre_modelo}</h3>
                     <p>{product.Categoria}</p>
                     <p>${product.Precio}</p>

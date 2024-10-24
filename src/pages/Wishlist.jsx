@@ -19,7 +19,7 @@ const Wishlist = () => {
   useEffect(() => {
     const loadWishlist = async () => {
       try {
-        const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/wishlist/cliente/${clientId}`, {
+        const response = await fetch(`https://localhost:8080/api/wishlist/cliente/${clientId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const Wishlist = () => {
       }
     };
 
-    if (authToken) {
+    if (authToken && clientId) {
       loadWishlist();
     }
   }, [authToken, clientId]);
@@ -94,7 +94,7 @@ const Wishlist = () => {
     });
 
     try {
-      const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/wishlist/${currentItemIdWish}`, {
+      const response = await fetch(`https://localhost:8080/api/wishlist/${currentItemIdWish}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ const Wishlist = () => {
   const handleRemove = async (wishId) => {
     console.log('Eliminando el item con Id_Wish:', wishId); 
     try {
-      const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/wishlist/${wishId}`, {
+      const response = await fetch(`https://localhost:8080/api/wishlist/${wishId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': localStorage.getItem('authToken'),
@@ -151,7 +151,7 @@ const Wishlist = () => {
     const estatus = 'Pendiente';
 
     try {
-      const response = await fetch('https://athleticstoreapi.integrador.xyz/api/Pedidos', {
+      const response = await fetch('https://localhost:8080/api/Pedidos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ const Wishlist = () => {
         })
         await Promise.all(
           wishlist.map(async (item) => {
-            const detalleResponse = await fetch('https://athleticstoreapi.integrador.xyz/api/Detalle_pedidos', {
+            const detalleResponse = await fetch('https://localhost:8080/api/Detalle_pedidos', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -246,7 +246,7 @@ const Wishlist = () => {
           <tbody>
             {wishlist && wishlist.map(item => (
               <tr key={item.Id_Wish} className="border">
-                <td className="border p-2 flex justify-center items-center"><img src={`https://athleticstoreapi.integrador.xyz/${item.Imagen}`} alt={item.Nombre_modelo} className="w-20 h-auto rounded-full" /></td>
+                <td className="border p-2 flex justify-center items-center"><img src={`https://localhost:8080/${item.Imagen}`} alt={item.Nombre_modelo} className="w-20 h-auto rounded-full" /></td>
                 <td className="border p-2 text-center">{item.Nombre_modelo}</td>
                 <td className="border p-2 text-center">{item.Talla}</td>
                 <td className="border p-2 text-center">{item.Cantidad}</td>

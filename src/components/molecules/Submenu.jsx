@@ -28,7 +28,15 @@ function Submenu() {
                                 onClick={() => navigate('/ordersClient')}
                                 className="block px-4 py-2 hover:bg-amber-200 hover:text-black"
                             >
-                                Pedidos
+                                Pedidos Realizados
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                onClick={() => navigate('/ordersClient')}
+                                className="block px-4 py-2 hover:bg-amber-200 hover:text-black"
+                            >
+                                Pedidos 
                             </button>
                         </li>
                     </ul>

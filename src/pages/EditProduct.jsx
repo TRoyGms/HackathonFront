@@ -15,6 +15,8 @@ const EditProduct = () => {
   useEffect(() => {
     const productToEdit = products.find(prod => prod.Folio_producto === parseInt(id));
     if (productToEdit) {
+      console.log(productToEdit.Folio_producto);
+      
       setProduct(productToEdit);
       setPrice(productToEdit.Precio);
     }
@@ -55,7 +57,7 @@ const EditProduct = () => {
         <p><strong>Marca:</strong> {product.Marca}</p>
         <p><strong>Género:</strong> {product.Genero}</p>
         <p><strong>Descripción:</strong> {product.Descripcion}</p>
-        <img src={`https://athleticstoreapi.integrador.xyz/${product.Imagen}`} alt={product.Nombre_modelo} className="w-full h-auto mb-2" />
+        <img src={`https://localhost:8080/${product.Imagen}`} alt={product.Nombre_modelo} className="w-full h-auto mb-2" />
         <label className="block mt-4">
           <span className="text-gray-700">Precio</span>
           <input

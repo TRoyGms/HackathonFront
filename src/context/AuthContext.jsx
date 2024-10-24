@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 
   const isAdmin = () => userRole === 1;
   const isUserLoggedIn = () => !!authToken;
-
+  
   return (
     <AuthContext.Provider value={{ authToken, clientId, userRole, login, logout, isAdmin, isUserLoggedIn }}>
       {children}

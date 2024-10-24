@@ -19,7 +19,7 @@ function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/Productos/${id}`);
+        const response = await fetch(`https://localhost:8080/api/Productos/${id}`);
         if (!response.ok) {
           throw new Error('Error al recuperar el producto');
         }
@@ -64,7 +64,7 @@ function ProductDetails() {
     console.log('Cliente ID:', clientId); 
 
     try {
-      const response = await fetch('https://athleticstoreapi.integrador.xyz/api/wishlist', {
+      const response = await fetch('https://localhost:8080/api/wishlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ function ProductDetails() {
     {product && (
       <div className="container mx-auto p-8 flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
-          <img src={`https://athleticstoreapi.integrador.xyz/${product.Imagen}`} alt={product.Nombre_modelo} className="w-full h-auto mb-2" />
+          <img src={`https://localhost:8080/${product.Imagen}`} alt={product.Nombre_modelo} className="w-full h-auto mb-2" />
         </div>
         <div className="w-full lg:w-1/2 p-8 bg-white rounded-md">
           <h2 className="text-3xl font-bold">{product.Nombre_modelo}</h2>

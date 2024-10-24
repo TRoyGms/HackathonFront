@@ -13,7 +13,7 @@ const PedidosCliente = () => {
   useEffect(() => {
     const loadOrders = async () => {
       try {
-        const response = await fetch(`https://athleticstoreapi.integrador.xyz/api/Pedidos`, {
+        const response = await fetch(`https://localhost:8080/api/Pedidos`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const PedidosCliente = () => {
           const clientOrders = data.filter(order => order.Id_Cliente === clientId);
           
           const orderDetailsPromises = clientOrders.map(order =>
-            fetch(`https://athleticstoreapi.integrador.xyz/api/Detalle_pedidos`, {
+            fetch(`https://localhost:8080/api/Detalle_pedidos`, {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const PedidosCliente = () => {
               {order.Detalles && order.Detalles.map(detalle => (
                 <tr key={detalle.Id_Detalle} className="border">
                   <td className="border p-2 flex justify-center items-center">
-                    <img src={`https://athleticstoreapi.integrador.xyz/${detalle.Imagen}`} alt={detalle.Nombre_modelo} className="w-20 h-auto rounded-full" />
+                    <img src={`https://localhost:8080/${detalle.Imagen}`} alt={detalle.Nombre_modelo} className="w-20 h-auto rounded-full" />
                   </td>
                   <td className="border p-2 text-center">{detalle.Nombre_modelo}</td>
                   <td className="border p-2 text-center">{detalle.Talla}</td>
